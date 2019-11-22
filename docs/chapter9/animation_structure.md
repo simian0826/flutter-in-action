@@ -61,9 +61,9 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>  with SingleT
     controller = new AnimationController(
         duration: const Duration(seconds: 3), vsync: this);
     //使用弹性曲线
-    animation=CurvedAnimation(parent: controller, curve: Curves.bounceIn);
+    final CurvedAnimation curve = CurvedAnimation(parent: controller, curve: Curves.elasticOut);
     //图片宽高从0变到300
-    animation = new Tween(begin: 0.0, end: 300.0).animate(animation)
+    animation = new Tween(begin: 0.0, end: 300.0).animate(curve)
       ..addListener(() {
         setState(() {
         });
